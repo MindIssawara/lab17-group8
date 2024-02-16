@@ -15,7 +15,7 @@ export default function ChatBox() {
   const [typedMessage, setTypedMessage] = useState<string>("");
   const username = useAppSelector(selectUsername);
   const webSocketState = useAppSelector(selectWebSocket);
-  let count;
+  let count = 0;
   return (
     <>
       <div className="bg-white w-full rounded-lg shadow-lg p-4">

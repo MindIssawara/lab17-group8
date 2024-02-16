@@ -13,7 +13,6 @@ import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 @RequiredArgsConstructor
 public class WebSocketEventListener {
     private final SimpMessageSendingOperations messageSendingOperations;
-//    private final SimpMessageSendingOperations count;
 
     @EventListener
     public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
@@ -29,7 +28,6 @@ public class WebSocketEventListener {
                     .sender(username)
                     .build();
             messageSendingOperations.convertAndSend("/topic/public", chatMessage);
-//            count.convertAndSend("/topic/count",ChatMessage.getCount());
         }
     }
 }
